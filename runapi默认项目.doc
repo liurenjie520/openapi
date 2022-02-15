@@ -1,0 +1,1645 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office"
+    xmlns:w="urn:schemas-microsoft-com:office:word"
+    xmlns="http://www.w3.org/TR/REC-html40">
+    <head><meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <style type="text/css">
+        table  
+        {  
+            border-collapse: collapse;
+            border: none;  
+            width: 100%;  
+        }  
+        td,tr  
+        {  
+            border: solid #CCC 1px;
+            padding:3px;
+            font-size:9pt;
+        } 
+        .codestyle{
+            word-break: break-all;
+            mso-highlight:rgb(252, 252, 252);
+            padding-left: 5px; background-color: rgb(252, 252, 252); border: 1px solid rgb(225, 225, 232);
+        }
+        img {
+            width:100;
+        }
+    </style>
+    <meta name=ProgId content=Word.Document>
+    <meta name=Generator content="Microsoft Word 11">
+    <meta name=Originator content="Microsoft Word 11">
+    <xml><w:WordDocument><w:View>Print</w:View></xml></head>
+    <body><h1>1、akb48sth官方api</h1><div style="margin-left:20px;"><h5>简要描述</h5>
+<ul>
+<li>获取某月行程</li>
+</ul>
+<h5>请求URL</h5>
+<ul>
+<li><code>http://www.akb48-china.com/trip/?tx_newsfrontedit_news[action]=ajaxdata</code></li>
+</ul>
+<h5>请求方式</h5>
+<ul>
+<li>post</li>
+</ul>
+<h5>请求Body参数</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">act</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>固定值，monthData</td>
+</tr>
+<tr>
+<td style="text-align: left;">year</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>某月，格式为：2021-09</td>
+</tr>
+</tbody>
+</table>
+<h5>成功返回示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "stat": 1,
+    "data": [
+        {
+            "title": "缩略图公演",
+            "date": "2021-09-04",
+            "id": 387,
+            "backgroundColor": "#fe7f81"
+        },
+        {
+            "title": "恋爱禁止条例公演",
+            "date": "2021-09-05",
+            "id": 386,
+            "backgroundColor": "#f092b1"
+        },
+        {
+            "title": "魏新生日",
+            "date": "2021-09-05",
+            "id": 372,
+            "backgroundColor": "#fd7f82"
+        },
+        {
+            "title": "曾鸶淳生日",
+            "date": "2021-09-11",
+            "id": 373,
+            "backgroundColor": "#fe6a7f"
+        },
+        {
+            "title": "张艺琳生日",
+            "date": "2021-09-12",
+            "id": 384,
+            "backgroundColor": "#ff9c7d"
+        },
+        {
+            "title": "曾艺生日",
+            "date": "2021-09-14",
+            "id": 385,
+            "backgroundColor": "#fe7f81"
+        },
+        {
+            "title": "施蔼倍生日",
+            "date": "2021-09-15",
+            "id": 374,
+            "backgroundColor": "#f092b1"
+        },
+        {
+            "title": "徐依婷生日",
+            "date": "2021-09-17",
+            "id": 375,
+            "backgroundColor": "#fd7f82"
+        },
+        {
+            "title": "巡回演唱会——宁波站",
+            "date": "2021-09-20",
+            "id": 388,
+            "backgroundColor": "#fe6a7f"
+        },
+        {
+            "title": "翟羽佳生日",
+            "date": "2021-09-29",
+            "id": 376,
+            "backgroundColor": "#ff9c7d"
+        }
+    ]
+}
+</code></pre></table>
+<h5>备注</h5></div><h1>2、bilibili图片动态（相簿）上传图片</h1><div style="margin-left:20px;"><h5>简要描述</h5>
+<ul>
+<li>无</li>
+</ul>
+<h5>请求URL</h5>
+<ul>
+<li><code>https://api.vc.bilibili.com/api/v1/drawImage/upload</code></li>
+</ul>
+<h5>请求方式</h5>
+<ul>
+<li>post</li>
+</ul>
+<h5>请求Body参数</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">file_up</td>
+<td style="text-align: left;">是</td>
+<td>file</td>
+<td>格式仅支持jpg  png  gif</td>
+</tr>
+<tr>
+<td style="text-align: left;">category</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>daily：日常（动态）draw：绘画（画友）cos：摄影（COSPLAY）</td>
+</tr>
+</tbody>
+</table>
+<h5>成功返回示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "code": 0,
+    "message": "success",
+    "data": {
+        "image_url": "http:\/\/i0.hdslb.com\/bfs\/album\/989a3804cec417974a2a382bf8b0d8fc1f2a5b05.jpg",
+        "image_width": 640,
+        "image_height": 640
+    }
+}
+</code></pre></table>
+<h5>成功返回示例的参数说明</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">number</td>
+<td>0：成功 -1：未添加图片-2：参数错误-3：图片尺寸过小-4：账号未登录-7：图片信息错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">message</td>
+<td style="text-align: left;">string</td>
+<td>默认为success</td>
+</tr>
+<tr>
+<td style="text-align: left;">data</td>
+<td style="text-align: left;">object</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">image_url</td>
+<td style="text-align: left;">string</td>
+<td>已上传图片url</td>
+</tr>
+<tr>
+<td style="text-align: left;">image_width</td>
+<td style="text-align: left;">number</td>
+<td>已上传图片宽度（像素）</td>
+</tr>
+<tr>
+<td style="text-align: left;">image_height</td>
+<td style="text-align: left;">number</td>
+<td>已上传图片高度（像素）</td>
+</tr>
+</tbody>
+</table>
+<h5>备注</h5></div><h1>3、口袋48最新公演动态</h1><div style="margin-left:20px;"><h5>简要描述</h5>
+<ul>
+<li>无需登录</li>
+</ul>
+<h5>请求URL</h5>
+<ul>
+<li><code>https://pocketapi.48.cn/live/api/v1/live/getOpenLiveList</code></li>
+</ul>
+<h5>请求方式</h5>
+<ul>
+<li>post</li>
+</ul>
+<h5>Header</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">header</th>
+<th style="text-align: left;">必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Content-Type</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">User-Agent</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">appInfo</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">Accept-Language</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">Connection</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">pa</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">Accept-Encoding</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h5>请求参数示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "groupId": 0,
+    "debug": false,
+    "next": 0,
+    "record": false
+}
+</code></pre></table>
+<h5>json字段说明</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">字段名</th>
+<th style="text-align: left;">必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">groupId</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>0全部，10snh，12gnz，11bej</td>
+</tr>
+<tr>
+<td style="text-align: left;">debug</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">next</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">record</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h5>成功返回示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "status": 200,
+    "success": true,
+    "message": "OK",
+    "content": {
+        "next": "1645095600000",
+        "liveList": [
+            {
+                "liveId": "700332450347028480",
+                "title": "BEJ48《2022北芭荣耀之夜》",
+                "subTitle": "2022BEJ48颁奖盛典",
+                "coverPath": "\/backstage\/2022\/0215\/eztko28rr7t5z0ibk75fafm.jpg",
+                "status": 1,
+                "stime": "1645095600000",
+                "endTime": "1645104600000",
+                "teamList": [
+                    {
+                        "teamId": 1105,
+                        "groupId": 11,
+                        "teamName": "BEJ48",
+                        "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                        "teamColor": "FF2471"
+                    }
+                ],
+                "liveType": 0,
+                "isCollection": 0
+            },
+            {
+                "liveId": "698575714023968768",
+                "title": "《羽化成蝶》公演",
+                "subTitle": "TEAM NII 剧场公演",
+                "coverPath": "\/backstage\/2022\/0210\/s0uzt6sku8h82pkl8yxl6f4.jpg",
+                "status": 1,
+                "stime": "1645096500000",
+                "endTime": "1645112700000",
+                "teamList": [
+                    {
+                        "teamId": 1002,
+                        "groupId": 10,
+                        "teamName": "TEAM NII",
+                        "teamLogo": "\/mediasource\/teamLogo2\/all\/snh48_n2.png",
+                        "teamColor": "AD85BA"
+                    }
+                ],
+                "liveType": 0,
+                "isCollection": 0
+            },
+            {
+                "liveId": "699960719212089344",
+                "title": "GNZ48剧场公演",
+                "subTitle": "TEAM NIII剧场公演",
+                "coverPath": "\/backstage\/2022\/0214\/n0nyla40b3eqptznficxya4.jpg",
+                "status": 1,
+                "stime": "1645182900000",
+                "endTime": "1645199100000",
+                "teamList": [
+                    {
+                        "teamId": 1202,
+                        "groupId": 12,
+                        "teamName": "TEAM NIII",
+                        "teamLogo": "\/mediasource\/teamLogo2\/all\/gnz48_n3.png",
+                        "teamColor": "FFD700"
+                    }
+                ],
+                "liveType": 0,
+                "isCollection": 0
+            },
+            {
+                "liveId": "698576205155995648",
+                "title": "《终极任务》公演",
+                "subTitle": "TEAM HII 剧场公演",
+                "coverPath": "\/backstage\/2022\/0210\/q2gw4qlw9adrhlhn2jw2t9z.jpg",
+                "status": 1,
+                "stime": "1645182900000",
+                "endTime": "1645199100000",
+                "teamList": [
+                    {
+                        "teamId": 1003,
+                        "groupId": 10,
+                        "teamName": "TEAM HII",
+                        "teamLogo": "\/mediasource\/teamLogo2\/all\/snh48_h2.png",
+                        "teamColor": "F39800"
+                    }
+                ],
+                "liveType": 0,
+                "isCollection": 0
+            },
+            {
+                "liveId": "699960932110766080",
+                "title": "GNZ48剧场公演",
+                "subTitle": "TEAM Z 剧场公演",
+                "coverPath": "\/backstage\/2022\/0214\/5sblkhc0pehdlnw8ko272rz.jpg",
+                "status": 1,
+                "stime": "1645249500000",
+                "endTime": "1645265700000",
+                "teamList": [
+                    {
+                        "teamId": 1203,
+                        "groupId": 12,
+                        "teamName": "TEAM Z",
+                        "teamLogo": "\/mediasource\/teamLogo\/all\/gnz_z_log2.png",
+                        "teamColor": "ea627c"
+                    }
+                ],
+                "liveType": 0,
+                "isCollection": 0
+            },
+            {
+                "liveId": "699961146456477696",
+                "title": "GNZ48剧场公演",
+                "subTitle": "TEAM G剧场公演",
+                "coverPath": "\/backstage\/2022\/0214\/5h2tod49p0lw0l7ku1kd437.jpg",
+                "status": 1,
+                "stime": "1645267500000",
+                "endTime": "1645285500000",
+                "teamList": [
+                    {
+                        "teamId": 1201,
+                        "groupId": 12,
+                        "teamName": "TEAM G",
+                        "teamLogo": "\/mediasource\/teamLogo2\/all\/gnz48_g.png",
+                        "teamColor": "AAC913"
+                    }
+                ],
+                "liveType": 0,
+                "isCollection": 0
+            },
+            {
+                "liveId": "700332888379166720",
+                "title": "《WE ARE THE BEJ》剧场公演",
+                "subTitle": "BEJ48剧场公演",
+                "coverPath": "\/backstage\/2022\/0215\/lzbzy299278c43pt5dt3uhg.jpg",
+                "status": 1,
+                "stime": "1645267500000",
+                "endTime": "1645282800000",
+                "teamList": [
+                    {
+                        "teamId": 1105,
+                        "groupId": 11,
+                        "teamName": "BEJ48",
+                        "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                        "teamColor": "FF2471"
+                    }
+                ],
+                "liveType": 0,
+                "isCollection": 0
+            },
+            {
+                "liveId": "699961434542247936",
+                "title": "GNZ48剧场公演",
+                "subTitle": "TEAM NIII剧场公演",
+                "coverPath": "\/backstage\/2022\/0214\/4oc0hz3q7dl4mlcgiifpxh8.jpg",
+                "status": 1,
+                "stime": "1645335900000",
+                "endTime": "1645352100000",
+                "teamList": [
+                    {
+                        "teamId": 1202,
+                        "groupId": 12,
+                        "teamName": "TEAM NIII",
+                        "teamLogo": "\/mediasource\/teamLogo2\/all\/gnz48_n3.png",
+                        "teamColor": "FFD700"
+                    }
+                ],
+                "liveType": 0,
+                "isCollection": 0
+            },
+            {
+                "liveId": "699961653958873088",
+                "title": "GNZ48剧场公演",
+                "subTitle": "TEAM Z剧场公演",
+                "coverPath": "\/backstage\/2022\/0214\/0fs568od269n69sn60mrzxl.jpg",
+                "status": 1,
+                "stime": "1645353900000",
+                "endTime": "1645371900000",
+                "teamList": [
+                    {
+                        "teamId": 1203,
+                        "groupId": 12,
+                        "teamName": "TEAM Z",
+                        "teamLogo": "\/mediasource\/teamLogo\/all\/gnz_z_log2.png",
+                        "teamColor": "ea627c"
+                    }
+                ],
+                "liveType": 0,
+                "isCollection": 0
+            }
+        ]
+    }
+}
+</code></pre></table>
+<h5>备注</h5></div><h1>4、口袋48小偶像直播动态</h1><div style="margin-left:20px;"><h5>简要描述</h5>
+<ul>
+<li>无需登录</li>
+</ul>
+<h5>请求URL</h5>
+<ul>
+<li><code>https://pocketapi.48.cn/live/api/v1/live/getLiveList</code></li>
+</ul>
+<h5>请求方式</h5>
+<ul>
+<li>post</li>
+</ul>
+<h5>请求参数示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "groupId": 11,
+    "debug": true,
+    "next": 0,
+    "record": true
+}
+</code></pre></table>
+<h5>json字段说明</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">字段名</th>
+<th style="text-align: left;">必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">groupId</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>0全部，10snh，12gnz，11bej</td>
+</tr>
+<tr>
+<td style="text-align: left;">debug</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">next</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">record</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h5>成功返回示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "status": 200,
+    "success": true,
+    "message": "OK",
+    "content": {
+        "next": "700080412010811392",
+        "liveList": [
+            {
+                "liveId": "700132938743615488",
+                "coverPath": "\/2022\/0214\/45285685xcn5dibdy0pbsxsr3l2ft5uj.jpg",
+                "title": "节日快乐🎆（补公演版",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644854300047",
+                "userInfo": {
+                    "userId": "45285685",
+                    "nickname": "BEJ48-黄宣绮",
+                    "avatar": "\/avatar\/2022\/0202\/45285685xy3hlo8yh2pnwot21606b2t7.jpg",
+                    "badge": [],
+                    "level": 3,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "\/20210512\/1620785615250rwyw9zbcx5.jpg",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 1104
+            },
+            {
+                "liveId": "700131620205432832",
+                "coverPath": "\/2022\/0214\/70385987xsnxtsj8npw4ndtznjkijimw.jpg",
+                "title": "进来卡卡",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644853985686",
+                "userInfo": {
+                    "userId": "70385987",
+                    "nickname": "BEJ48-林滢",
+                    "avatar": "\/avatar\/2022\/0129\/70385987xoq4ef2iwx0npcsbg536ffk3.jpg",
+                    "badge": [],
+                    "level": 1,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 2000,
+                "coverHeight": 3001
+            },
+            {
+                "liveId": "700124333134909440",
+                "coverPath": "\/2022\/0214\/711746x4je1899cnzyv42lwqob1yjw.jpg",
+                "title": "拍拍笨蛋",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644852248330",
+                "userInfo": {
+                    "userId": "711746",
+                    "nickname": "BEJ48-周湘",
+                    "avatar": "\/20210317\/1615991607403vbnjnaq31m.jpg",
+                    "badge": [],
+                    "level": 4,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "\/20200430\/1588244627823TR1Gp1Lh0a.jpg",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 2688,
+                "coverHeight": 4032
+            },
+            {
+                "liveId": "700111466146893824",
+                "coverPath": "\/2022\/0214\/45285685x6gp4kqz78kn9wj0qacorak8.jpg",
+                "title": "节日快乐🎆",
+                "liveType": 2,
+                "status": 3,
+                "ctime": "1644849180631",
+                "userInfo": {
+                    "userId": "45285685",
+                    "nickname": "BEJ48-黄宣绮",
+                    "avatar": "\/avatar\/2022\/0202\/45285685xy3hlo8yh2pnwot21606b2t7.jpg",
+                    "badge": [],
+                    "level": 3,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "\/20210512\/1620785615250rwyw9zbcx5.jpg",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 1104
+            },
+            {
+                "liveId": "700110484272910336",
+                "coverPath": "\/2022\/0214\/45285685x8k450k4ecacwc2ydtsol00e.jpg",
+                "title": "节日快乐🎆",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644848946536",
+                "userInfo": {
+                    "userId": "45285685",
+                    "nickname": "BEJ48-黄宣绮",
+                    "avatar": "\/avatar\/2022\/0202\/45285685xy3hlo8yh2pnwot21606b2t7.jpg",
+                    "badge": [],
+                    "level": 3,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "\/20210512\/1620785615250rwyw9zbcx5.jpg",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 1104
+            },
+            {
+                "liveId": "700106635285958656",
+                "coverPath": "\/2022\/0214\/70385987x5yvdgs144k9me6kib517ai5.jpg",
+                "title": "素颜到化妆过程",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644848028875",
+                "userInfo": {
+                    "userId": "70385987",
+                    "nickname": "BEJ48-林滢",
+                    "avatar": "\/avatar\/2022\/0129\/70385987xoq4ef2iwx0npcsbg536ffk3.jpg",
+                    "badge": [],
+                    "level": 1,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 2000,
+                "coverHeight": 3001
+            },
+            {
+                "liveId": "700104972949065729",
+                "coverPath": "\/2022\/0214\/7984906291xixvie7b315rf7a28nh8xmwc.jpg",
+                "title": "或许，我能陪你过～",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644847632756",
+                "userInfo": {
+                    "userId": "7984906291",
+                    "nickname": "BEJ48-王若诗蓝",
+                    "avatar": "\/avatar\/2022\/0212\/7984906291xa2o0tgpvhriggsm7z0nf4ir.jpg",
+                    "badge": [],
+                    "level": 3,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 1104
+            },
+            {
+                "liveId": "700103921143451648",
+                "coverPath": "\/2022\/0212\/45285698xrckydss6mkvzso76f1zpnp0.jpg",
+                "title": "੭ ᐕ)੭*⁾⁾",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644847381986",
+                "userInfo": {
+                    "userId": "45285698",
+                    "nickname": "BEJ48-张宸祎",
+                    "avatar": "\/avatar\/2022\/0212\/45285698xqpdk76a1mn846ppettu8him.jpg",
+                    "badge": [],
+                    "level": 3,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "\/20210125\/1611566503852wN2SS6gnnF.jpeg",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 1643,
+                "coverHeight": 1643
+            },
+            {
+                "liveId": "700102176610783232",
+                "coverPath": "\/2022\/0214\/70385975x8p522oy093e80smew9vgdv2.jpg",
+                "title": "播播:)",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644846965855",
+                "userInfo": {
+                    "userId": "70385975",
+                    "nickname": "BEJ48-韩雪",
+                    "avatar": "\/avatar\/2022\/0214\/70385975xi7fvhxp30r9kya3hkhycvun.jpg",
+                    "badge": [],
+                    "level": 1,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 828
+            },
+            {
+                "liveId": "700100896223989760",
+                "coverPath": "\/2022\/0214\/528329xtzluzprdn573s2qb5x1b44u.jpg",
+                "title": "214快乐～",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644846660590",
+                "userInfo": {
+                    "userId": "528329",
+                    "nickname": "BEJ48-孙晓艳",
+                    "avatar": "\/mediasource\/avatar\/152052582125385Y3rslp05.jpg",
+                    "badge": [],
+                    "level": 4,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "\/20190513\/1557712071161KfK36TqqiO.jpg",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 1242
+            },
+            {
+                "liveId": "700092633503830016",
+                "coverPath": "\/2022\/0214\/45285682xt19tlh5vbkie7zk6eol805i.jpg",
+                "title": "🍰",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644844690494",
+                "userInfo": {
+                    "userId": "45285682",
+                    "nickname": "BEJ48-黄怡慈",
+                    "avatar": "\/avatar\/2022\/0215\/45285682xu8i74ny67ka6g4grmr66w39.jpg",
+                    "badge": [],
+                    "level": 3,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "\/20210124\/1611425975126M9JO9bW3HN.jpg",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xf5n51i9ufwwzlhao1f95czj.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 1104
+            },
+            {
+                "liveId": "700092557536595968",
+                "coverPath": "\/2022\/0214\/7984906291x692e8xzio0a59omtpw8y16b.jpg",
+                "title": "或许，我能陪你过～",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644844672512",
+                "userInfo": {
+                    "userId": "7984906291",
+                    "nickname": "BEJ48-王若诗蓝",
+                    "avatar": "\/avatar\/2022\/0212\/7984906291xa2o0tgpvhriggsm7z0nf4ir.jpg",
+                    "badge": [],
+                    "level": 3,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 1104
+            },
+            {
+                "liveId": "700089601881870336",
+                "coverPath": "\/2022\/0214\/70385987xjnq0utyuuwd1f3y8szfvbq6.jpg",
+                "title": "素颜到化妆过程",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644843967836",
+                "userInfo": {
+                    "userId": "70385987",
+                    "nickname": "BEJ48-林滢",
+                    "avatar": "\/avatar\/2022\/0129\/70385987xoq4ef2iwx0npcsbg536ffk3.jpg",
+                    "badge": [],
+                    "level": 1,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 2000,
+                "coverHeight": 3001
+            },
+            {
+                "liveId": "700089331693195264",
+                "coverPath": "\/2022\/0214\/70385972x95sm5o8k0w4v7ntw5lw7rj8.jpg",
+                "title": "情人节快乐～😗+❤️=😘",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644843903418",
+                "userInfo": {
+                    "userId": "70385972",
+                    "nickname": "BEJ48-郭晓盈",
+                    "avatar": "\/avatar\/2022\/0123\/70385972x882jtmzwizcias3gqyrotrf.jpg",
+                    "badge": [],
+                    "level": 1,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000x32nkuc2b5286f2ka734bd8c.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 1242
+            },
+            {
+                "liveId": "700089055867375616",
+                "coverPath": "\/2022\/0214\/70385972xu2jfbg6veacsgx2asxtfr0a.jpg",
+                "title": "情人节快乐～😗+❤️=😘",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644843837532",
+                "userInfo": {
+                    "userId": "70385972",
+                    "nickname": "BEJ48-郭晓盈",
+                    "avatar": "\/avatar\/2022\/0123\/70385972x882jtmzwizcias3gqyrotrf.jpg",
+                    "badge": [],
+                    "level": 1,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000x32nkuc2b5286f2ka734bd8c.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 1242
+            },
+            {
+                "liveId": "700088385756008448",
+                "coverPath": "\/2022\/0214\/327580xigk9ttc06ivz5l5ss034n5u.jpg",
+                "title": "如图👆",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644843677891",
+                "userInfo": {
+                    "userId": "327580",
+                    "nickname": "BEJ48-张梦慧",
+                    "avatar": "\/20210119\/1611045924838P14IZSgR6x.jpg",
+                    "badge": [],
+                    "level": 4,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "\/20200912\/1599854561116l3SjwWmrr9.jpg",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/backstage\/2022\/0125\/bbl9ozlpb08mwz15vme630w.webp",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 996
+            },
+            {
+                "liveId": "700087711752327168",
+                "coverPath": "\/2022\/0214\/70385987x3ne4cx3f4r0qtx98pvc83th.jpg",
+                "title": "素颜到化妆过程",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644843517198",
+                "userInfo": {
+                    "userId": "70385987",
+                    "nickname": "BEJ48-林滢",
+                    "avatar": "\/avatar\/2022\/0129\/70385987xoq4ef2iwx0npcsbg536ffk3.jpg",
+                    "badge": [],
+                    "level": 1,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 2000,
+                "coverHeight": 3001
+            },
+            {
+                "liveId": "700085349457399808",
+                "coverPath": "\/2022\/0214\/45285691xz8jbzu4po9ytsz1t00h9s5v.jpg",
+                "title": "晚上好呀",
+                "liveType": 1,
+                "status": 3,
+                "ctime": "1644842953989",
+                "userInfo": {
+                    "userId": "45285691",
+                    "nickname": "BEJ48-唐晨葳",
+                    "avatar": "\/avatar\/2021\/1208\/45285691x4veqxrv8bpum9eb32xp5u65.jpg",
+                    "badge": [],
+                    "level": 3,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "\/20201226\/1608968257426k1NWiPgaW0.jpg",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 828,
+                "coverHeight": 620
+            },
+            {
+                "liveId": "700083025536159744",
+                "coverPath": "\/2022\/0214\/70385982x85e1k0adaff4em2s6vdb8h6.jpg",
+                "title": "🌹",
+                "liveType": 2,
+                "status": 3,
+                "ctime": "1644842399928",
+                "userInfo": {
+                    "userId": "70385982",
+                    "nickname": "BEJ48-李思奥",
+                    "avatar": "\/avatar\/2022\/0213\/70385982x24xn66w33nxc8j01ycb4kl6.jpg",
+                    "badge": [],
+                    "level": 1,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000x32nkuc2b5286f2ka734bd8c.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 663,
+                "coverHeight": 663
+            },
+            {
+                "liveId": "700080412010811392",
+                "coverPath": "\/2022\/0214\/70385991x889wb17bw9k75yzl2gkmusw.jpg",
+                "title": "不烦星球通道入口开放👻",
+                "liveType": 2,
+                "status": 3,
+                "ctime": "1644841776821",
+                "userInfo": {
+                    "userId": "70385991",
+                    "nickname": "BEJ48-王言蹊",
+                    "avatar": "\/avatar\/2022\/0206\/70385991x2tvvdt8ti5792so27dxh76z.jpg",
+                    "badge": [],
+                    "level": 1,
+                    "isStar": true,
+                    "friends": "0",
+                    "followers": "0",
+                    "teamLogo": "\/20200904\/15992025288054qD21JfZgU.png",
+                    "signature": "",
+                    "bgImg": "",
+                    "vip": false,
+                    "userRole": 3,
+                    "pfUrl": "\/2021\/0609\/000xs52nhqccvweyc3dxh06v2xx.png",
+                    "effectUser": true
+                },
+                "liveMode": 0,
+                "pictureOrientation": 0,
+                "isCollection": 0,
+                "inMicrophoneConnection": false,
+                "coverWidth": 2160,
+                "coverHeight": 2160
+            }
+        ],
+        "slideUpAndDown": false
+    }
+}
+</code></pre></table>
+<h5>备注</h5></div><h1>5、口袋48行程</h1><div style="margin-left:20px;"><h5>简要描述</h5>
+<ul>
+<li>无需登录</li>
+</ul>
+<h5>请求URL</h5>
+<ul>
+<li><code>https://pocketapi.48.cn/trip/api/trip/v1/list</code></li>
+</ul>
+<h5>请求方式</h5>
+<ul>
+<li>post</li>
+</ul>
+<h5>请求参数示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "lastTime": "0",
+    "groupId": 0,
+    "isMore": false
+}
+</code></pre></table>
+<h5>json字段说明</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">字段名</th>
+<th style="text-align: left;">必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">lastTime</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">groupId</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>0全部，10snh，12gnz，11bej</td>
+</tr>
+<tr>
+<td style="text-align: left;">isMore</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h5>成功返回示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "status": 200,
+    "success": true,
+    "message": "OK",
+    "content": {
+        "data": [
+            {
+                "tripId": 8322,
+                "type": 5,
+                "title": "BEJ48《2022北芭荣耀之夜》",
+                "subTitle": "2022BEJ48颁奖盛典",
+                "showDate": "2022-02-17",
+                "showTime": "19:00:00",
+                "content": "BEJ48《2022北芭荣耀之夜》",
+                "joinMemberName": "张梦慧,孙晓艳,周湘,陈蓁蓁,黄怡慈,黄宣绮,唐晨葳,张宸祎,郭晓盈,韩雪,李思奥,林滢,王思奕,王言蹊,朱虹蓉,王若诗蓝",
+                "joinMemberIds": [
+                    327580,
+                    528329,
+                    711746,
+                    45285669,
+                    45285682,
+                    45285685,
+                    45285691,
+                    45285698,
+                    70385972,
+                    70385975,
+                    70385982,
+                    70385987,
+                    70385989,
+                    70385991,
+                    70385998,
+                    7984906291
+                ],
+                "isLike": false,
+                "timestamp": 1645095600000,
+                "praise": 0
+            },
+            {
+                "tripId": 8323,
+                "type": 1,
+                "title": "《WE ARE THE BEJ》剧场公演",
+                "subTitle": "BEJ48剧场公演",
+                "showDate": "2022-02-19",
+                "showTime": "19:00:00",
+                "content": "《WE ARE THE BEJ》剧场公演 实名认证检票 本场公演将进行网络直播。",
+                "joinMemberName": "张梦慧,孙晓艳,周湘,陈蓁蓁,黄怡慈,黄宣绮,唐晨葳,张宸祎,郭晓盈,韩雪,李思奥,林滢,王思奕,王言蹊,朱虹蓉,王若诗蓝",
+                "joinMemberIds": [
+                    327580,
+                    528329,
+                    711746,
+                    45285669,
+                    45285682,
+                    45285685,
+                    45285691,
+                    45285698,
+                    70385972,
+                    70385975,
+                    70385982,
+                    70385987,
+                    70385989,
+                    70385991,
+                    70385998,
+                    7984906291
+                ],
+                "ticketInfo": {
+                    "content": "超级VIP座228元（现金竞价）、VIP座席228元（现金竞价）、普通座席128元、普通站席128元、 站席摄影权128元（现金竞价）",
+                    "url": "https:\/\/shop.48.cn\/tickets\/item\/4479"
+                },
+                "liveInfo": {
+                    "content": "本场公演将在口袋48直播",
+                    "type": 0,
+                    "url": ""
+                },
+                "locationInfo": {
+                    "details": "北京市朝阳区甘露园19号22-5-B壹空间(甘露园店)",
+                    "keyword": "北京",
+                    "longitude": "",
+                    "latitude": ""
+                },
+                "isLike": false,
+                "timestamp": 1645268400000,
+                "praise": 0
+            },
+            {
+                "tripId": 8298,
+                "type": 0,
+                "title": "当日寿星",
+                "subTitle": "任蔓琳生日快乐！",
+                "showDate": "2022-02-21",
+                "showTime": "00:00:00",
+                "content": "喜欢ta，就快到她个人主页点击“送礼”给她送鲜花吧、还可以留言送祝福哦！",
+                "joinMemberName": "任蔓琳",
+                "joinMemberIds": [
+                    831078
+                ],
+                "isLike": false,
+                "timestamp": 1645372800000,
+                "praise": 0
+            },
+            {
+                "tripId": 8301,
+                "type": 0,
+                "title": "当日寿星",
+                "subTitle": "王若诗蓝生日快乐！",
+                "showDate": "2022-03-17",
+                "showTime": "00:00:00",
+                "content": "喜欢ta，就快到她个人主页点击“送礼”给她送鲜花吧、还可以留言送祝福哦！",
+                "joinMemberName": "王丹妮",
+                "joinMemberIds": [
+                    7984906291
+                ],
+                "isLike": false,
+                "timestamp": 1647446400000,
+                "praise": 0
+            },
+            {
+                "tripId": 8300,
+                "type": 0,
+                "title": "当日寿星",
+                "subTitle": "周湘生日快乐！",
+                "showDate": "2022-03-18",
+                "showTime": "00:00:00",
+                "content": "喜欢ta，就快到她个人主页点击“送礼”给她送鲜花吧、还可以留言送祝福哦！",
+                "joinMemberName": "周湘",
+                "joinMemberIds": [
+                    711746
+                ],
+                "isLike": false,
+                "timestamp": 1647532800000,
+                "praise": 0
+            },
+            {
+                "tripId": 8312,
+                "type": 0,
+                "title": "当日寿星",
+                "subTitle": "王思奕生日快乐！",
+                "showDate": "2022-05-06",
+                "showTime": "00:00:00",
+                "content": "喜欢ta，就快到她个人主页点击“送礼”给她送鲜花吧、还可以留言送祝福哦！",
+                "joinMemberName": "王思奕",
+                "joinMemberIds": [
+                    70385989
+                ],
+                "isLike": false,
+                "timestamp": 1651766400000,
+                "praise": 0
+            },
+            {
+                "tripId": 8313,
+                "type": 0,
+                "title": "当日寿星",
+                "subTitle": "王言蹊生日快乐！",
+                "showDate": "2022-05-15",
+                "showTime": "00:00:00",
+                "content": "喜欢ta，就快到她个人主页点击“送礼”给她送鲜花吧、还可以留言送祝福哦！",
+                "joinMemberName": "王言蹊",
+                "joinMemberIds": [
+                    70385991
+                ],
+                "isLike": false,
+                "timestamp": 1652544000000,
+                "praise": 0
+            },
+            {
+                "tripId": 8302,
+                "type": 0,
+                "title": "当日寿星",
+                "subTitle": "陈蓁蓁生日快乐！",
+                "showDate": "2022-05-20",
+                "showTime": "00:00:00",
+                "content": "喜欢ta，就快到她个人主页点击“送礼”给她送鲜花吧、还可以留言送祝福哦！",
+                "joinMemberName": "陈蓁蓁",
+                "joinMemberIds": [
+                    45285669
+                ],
+                "isLike": false,
+                "timestamp": 1652976000000,
+                "praise": 0
+            },
+            {
+                "tripId": 8309,
+                "type": 0,
+                "title": "当日寿星",
+                "subTitle": "韩雪生日快乐！",
+                "showDate": "2022-05-29",
+                "showTime": "00:00:00",
+                "content": "喜欢ta，就快到她个人主页点击“送礼”给她送鲜花吧、还可以留言送祝福哦！",
+                "joinMemberName": "韩雪",
+                "joinMemberIds": [
+                    70385975
+                ],
+                "isLike": false,
+                "timestamp": 1653753600000,
+                "praise": 0
+            },
+            {
+                "tripId": 8306,
+                "type": 0,
+                "title": "当日寿星",
+                "subTitle": "唐晨葳生日快乐！",
+                "showDate": "2022-06-13",
+                "showTime": "00:00:00",
+                "content": "喜欢ta，就快到她个人主页点击“送礼”给她送鲜花吧、还可以留言送祝福哦！",
+                "joinMemberName": "唐晨葳",
+                "joinMemberIds": [
+                    45285691
+                ],
+                "isLike": false,
+                "timestamp": 1655049600000,
+                "praise": 0
+            }
+        ]
+    }
+}
+</code></pre></table>
+<h5>备注</h5></div><h1>6、口袋48专辑</h1><div style="margin-left:20px;"><h5>简要描述</h5>
+<ul>
+<li>无需登录</li>
+</ul>
+<h5>请求URL</h5>
+<ul>
+<li><code>https://pocketapi.48.cn/media/api/media/v1/album/list</code></li>
+</ul>
+<h5>请求方式</h5>
+<ul>
+<li>post</li>
+</ul>
+<h5>请求参数示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "ctime": 0,
+    "groupId": 0,
+    "limit": 10
+}
+</code></pre></table>
+<h5>json字段说明</h5>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">字段名</th>
+<th style="text-align: left;">必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ctime</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td style="text-align: left;">groupId</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>0全部，10snh，12gnz，11bej</td>
+</tr>
+<tr>
+<td style="text-align: left;">limit</td>
+<td style="text-align: left;">是</td>
+<td>string</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h5>成功返回示例</h5>
+<table width='100%' class='codestyle'><pre><code>{
+    "status": 200,
+    "success": true,
+    "message": "OK",
+    "content": {
+        "data": [
+            {
+                "albumId": 31,
+                "title": "《Be A Fighter》",
+                "coverPath": "\/mediasource\/music\/album\/conver\/152568302711251D1301S8A.png",
+                "singger": "BEJ48",
+                "category": 1,
+                "groupId": 11,
+                "musicId": 186,
+                "ctime": 1525683042000
+            },
+            {
+                "albumId": 30,
+                "title": "《Say No》",
+                "coverPath": "\/mediasource\/music\/album\/conver\/1512721411322g8X072w2R8.jpg",
+                "singger": "GNZ48",
+                "category": 0,
+                "groupId": 12,
+                "musicId": 177,
+                "ctime": 1512721421000
+            },
+            {
+                "albumId": 29,
+                "title": "《百变惊叹号》",
+                "coverPath": "\/mediasource\/music\/album\/conver\/150822708869350YSlye66r.jpg",
+                "singger": "BEJ48TOP16",
+                "category": 0,
+                "groupId": 11,
+                "musicId": 172,
+                "ctime": 1508227299000
+            },
+            {
+                "albumId": 28,
+                "title": "那不勒斯的黎明",
+                "coverPath": "\/mediasource\/music\/album\/conver\/1507891703821dXT462F020.jpg",
+                "singger": "SNH48,BEJ48,GNZ48,SHY48",
+                "category": 0,
+                "groupId": 10,
+                "musicId": 168,
+                "ctime": 1507891639000
+            },
+            {
+                "albumId": 27,
+                "title": "《前行的力量》",
+                "coverPath": "\/mediasource\/music\/album\/conver\/1505456015326jAKcHb9V09.jpg",
+                "singger": "SHY48",
+                "category": 0,
+                "groupId": 13,
+                "musicId": 163,
+                "ctime": 1505454154000
+            },
+            {
+                "albumId": 26,
+                "title": "《双面偶像》",
+                "coverPath": "\/mediasource\/music\/album\/conver\/15033808720270T30Wlz758.jpg",
+                "singger": "GNZ48",
+                "category": 1,
+                "groupId": 12,
+                "musicId": 145,
+                "ctime": 1503380878000
+            },
+            {
+                "albumId": 25,
+                "title": "鞠婧祎《等不到你》",
+                "coverPath": "\/mediasource\/music\/album\/conver\/1495870370232PCs97I2W0Y.jpg",
+                "singger": "鞠婧祎",
+                "category": 0,
+                "groupId": 10,
+                "musicId": 138,
+                "ctime": 1495870488000
+            },
+            {
+                "albumId": 24,
+                "title": "《宣言》",
+                "coverPath": "\/mediasource\/music\/album\/conver\/1492497926628253On676Xe.png",
+                "singger": "BEJ48 TeamB,TeamE,TeamJ",
+                "category": 0,
+                "groupId": 11,
+                "musicId": 133,
+                "ctime": 1492497937000
+            },
+            {
+                "albumId": 23,
+                "title": "7SENSES《Girl Crush》",
+                "coverPath": "\/mediasource\/music\/album\/conver\/1492420611673HlAQB1ncVL.jpg",
+                "singger": "7SENSES,张语格,许佳琪,戴萌,孔肖吟,赵粤,陈琳,许杨玉琢",
+                "category": 0,
+                "groupId": 10,
+                "musicId": 128,
+                "ctime": 1492420628000
+            },
+            {
+                "albumId": 22,
+                "title": "《BOOM！BOOM！BOOM！》",
+                "coverPath": "\/mediasource\/album\/5b689b7d-c9cb-4b4c-8884-4700687611eb.jpg",
+                "singger": "GNZ48",
+                "category": 0,
+                "groupId": 12,
+                "musicId": 118,
+                "ctime": 1485014400000
+            }
+        ]
+    }
+}
+</code></pre></table>
+<h5>备注</h5></div></body></html>
